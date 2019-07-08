@@ -8,8 +8,9 @@
              BackgroundColor="#FFFFFF">
     
     <ContentPage Title="BatchNumberCRUDTab">
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="BatchNumber CRUD" />
+         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+              <Entry Placeholder="Batch Number"/>
+              <Button Text="+ Add a new Batch" TextColor="#FFFFFF" BackgroundColor="#EF4130" BorderRadius="20" FontAttributes="Bold" FontSize="Medium"/>
         </StackLayout>
     </ContentPage>
 

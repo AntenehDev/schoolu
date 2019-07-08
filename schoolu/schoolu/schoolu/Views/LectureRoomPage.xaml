@@ -9,7 +9,8 @@
 
     <ContentPage Title="LectureRoomPageCRUDTab">
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="LectureRoomPage CRUD" />
+            <Entry Placeholder="LectureRoom"/>
+            <Button Text="+ Add a new LectureRoom" TextColor="#FFFFFF" BackgroundColor="#EF4130" BorderRadius="20" FontAttributes="Bold" FontSize="Medium"/>
         </StackLayout>
     </ContentPage>
 

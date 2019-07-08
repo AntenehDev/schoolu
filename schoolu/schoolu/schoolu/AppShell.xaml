@@ -44,7 +44,7 @@
             <ShellContent ContentTemplate="{DataTemplate local:LectureRoomPage}" />
         </Tab>
         <Tab Title="Batch" Icon="batch.png">
-            <ShellContent ContentTemplate="{DataTemplate local:SectionPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:BatchNumberPage}" />
         </Tab>
     </TabBar>
     
