@@ -6,6 +6,33 @@
              mc:Ignorable="d"
              x:Class="schoolu.App">
     <Application.Resources>
+        <!-- ResourceDictionary -->
+        <ResourceDictionary>
+            <x:Int32 x:Key="buttonBorderRadius">20</x:Int32>
+            <Color x:Key="buttonbackgroundColor">#EF4130</Color>
+            <FontAttributes x:Key="buttonFontAttributes">Bold</FontAttributes>
+            <x:Int32 x:Key="frameCornerRadius">15</x:Int32>
+            <x:Int32 x:Key="frameMargin">10</x:Int32>
+            <Color x:Key="frameBackgroundColor">#FFFFFF</Color>
+            <x:Int32 x:Key="framePadding">5</x:Int32>
+            <!-- ResourceDictionary -->
+            <!-- Style -->
+            <Style x:Key="button" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource buttonbackgroundColor}"/>
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+                <Setter Property="BorderRadius" Value="{StaticResource buttonBorderRadius}"/>
+                <Setter Property="FontAttributes" Value="{StaticResource buttonFontAttributes}"/>
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+            <Style x:Key="frame" TargetType="Frame">
+                <Setter Property="CornerRadius" Value="{StaticResource frameCornerRadius}"/>
+                <Setter Property="Margin" Value="{StaticResource frameMargin}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource frameBackgroundColor}"/>
+                <Setter Property="Padding" Value="{StaticResource framePadding}"/>
+                <Setter Property="HasShadow" Value="True"/>
+            </Style>
+            <!-- Style -->
+        </ResourceDictionary>
         
     </Application.Resources>
 </Application>
