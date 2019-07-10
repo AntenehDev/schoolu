@@ -9,14 +9,66 @@
 
     <ContentPage Title="SchedulePageCRUDTab">
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="SchedulePage CRUD" />
+            <Entry x:Name="BatchNo" Placeholder="BatchNo."/>
+            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" VerticalOptions="Center">
+                <Label Text="Monday"/>
+                <Editor x:Name="Monday"  Keyboard="Text" Placeholder="Monday Schedule"></Editor>
+                <Label Text="Tuseday"/>
+                <Editor x:Name="Tuseday"  Keyboard="Text" Placeholder="Tuseday Schedule"></Editor>
+                <Label Text="Wednesday"/>
+                <Editor  x:Name="Wednesday" Keyboard="Text" Placeholder="Wednesday Schedule"></Editor>
+            </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" VerticalOptions="Center">
+                <Label Text="Thursday"/>
+                <Editor  x:Name="Thursday"  Keyboard="Text" Placeholder="Thursday Schedule"></Editor>
+                <Label Text="Friday"/>
+                <Editor  x:Name="Friday"  Keyboard="Text" Placeholder="Friday Schedule"></Editor>
+                <Label Text="Saturday"/>
+                <Editor   x:Name="Saturday" Keyboard="Text" Placeholder="Saturday Schedule"></Editor>
+            </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" VerticalOptions="Center">
+                <Button x:Name="buttonAddSchedule" Text="+ Add a new course" Style="{StaticResource button}" Clicked="ButtonAddSchedule_Clicked"/>
+                <Button x:Name="buttonRetrieveSchedule" Text="Retrieve a course" Style="{StaticResource button}" Clicked="ButtonRetrieveSchedule_Clicked"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" VerticalOptions="Center">
+                <Button x:Name="buttonUpdateSchedule" Text="Update course" Style="{StaticResource button}" Clicked="ButtonUpdateSchedule_Clicked"/>
+                <Button x:Name="buttonDeleteSchedule" Text="Remove course" Style="{StaticResource button}" Clicked="ButtonDeleteSchedule_Clicked"/>
+            </StackLayout>
+
         </StackLayout>
     </ContentPage>
 
     <ContentPage Title="SchedulePageViewTab">
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="SchedulePage View" />
-        </StackLayout>
+        <ScrollView>
+            <CollectionView x:Name="CollectionViewSchedule">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Style="{StaticResource frame}">
+                            <Frame.Content>
+                                <StackLayout Padding="10,10,10,10" Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="BatchNo" TextColor="Gray" FontSize="Medium" FontAttributes="Bold"/>
+                                        <Label Text="{Binding BatchNo}" HorizontalOptions="Start" TextColor="#EF4130" FontSize="Large" FontAttributes="Bold"/>
+                                        <Label Text="Mon" TextColor="Gray" FontSize="Medium" FontAttributes="Bold"/>
+                                        <Label Text="{Binding Mon}" HorizontalOptions="Start" TextColor="#EF4130" FontSize="Large" FontAttributes="Bold"/>
+                                        <Label Text="Tue" TextColor="Gray" FontSize="Medium" FontAttributes="Bold"/>
+                                        <Label Text="{Binding Tue}" HorizontalOptions="Start" TextColor="#EF4130" FontSize="Large" FontAttributes="Bold"/>
+                                        <Label Text="Wed" TextColor="Gray" FontSize="Medium" FontAttributes="Bold"/>
+                                        <Label Text="{Binding Wed}" HorizontalOptions="Start" TextColor="#EF4130" FontSize="Large" FontAttributes="Bold"/>
+                                        <Label Text="Thu" TextColor="Gray" FontSize="Medium" FontAttributes="Bold"/>
+                                        <Label Text="{Binding Thu}" HorizontalOptions="Start" TextColor="#EF4130" FontSize="Large" FontAttributes="Bold"/>
+                                        <Label Text="Fri" TextColor="Gray" FontSize="Medium" FontAttributes="Bold"/>
+                                        <Label Text="{Binding Fri}" HorizontalOptions="Start" TextColor="#EF4130" FontSize="Large" FontAttributes="Bold"/>
+                                        <Label Text="Sat" TextColor="Gray" FontSize="Medium" FontAttributes="Bold"/>
+                                        <Label Text="{Binding Sat}" HorizontalOptions="Start" TextColor="#EF4130" FontSize="Large" FontAttributes="Bold"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame.Content>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
     </ContentPage>
 
 </CarouselPage>

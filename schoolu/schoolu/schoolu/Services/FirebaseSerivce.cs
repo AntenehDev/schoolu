@@ -95,5 +95,28 @@ namespace schoolu.Services
             await firebase.Child("Courses").Child(toDeleteCourse.Key).DeleteAsync();
         }
 
+        public async Task<List<WeekSchedule>> GetAllWeekSchedules()
+        {
+            return (await firebase
+            .Child("WeekSchedules")
+            .OnceAsync<WeekSchedule>()).Select(item => new WeekSchedule
+            {
+                BatchNo = item.Object.BatchNo,
+                Mon = item.Object.Mon,
+                Tue = item.Object.Tue,
+                Wed = item.Object.Wed,
+                Thu = item.Object.Thu,
+                Fri = item.Object.Fri,
+                Sat = item.Object.Sat,
+            }).ToList();
+        }
+
+        public async Task AddWeekSchedule(string batchNo, string mon, string tue, string wed, string thu, string fri, string sat)
+        {
+            await firebase
+            .Child("WeekSchedules")
+            .PostAsync(new WeekSchedule() { BatchNo = batchNo, Mon = mon, Tue = tue, Wed = wed, Thu = thu, Fri = fri, Sat = sat });
+        }
+
     }
 }
