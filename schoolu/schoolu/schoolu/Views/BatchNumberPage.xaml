@@ -9,8 +9,8 @@
     
     <ContentPage Title="BatchNumberCRUDTab">
          <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-              <Entry Placeholder="Batch Number"/>
-              <Button Text="+ Add a new Batch" Style="{StaticResource button}"/>
+            <Entry x:Name="entryBatch" Placeholder="Batch Number"/>
+            <Button x:Name="buttonAddBatch" Text="+ Add a new Batch" Style="{StaticResource button}"/>
         </StackLayout>
     </ContentPage>
 
