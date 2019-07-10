@@ -10,14 +10,29 @@
     <ContentPage Title="BatchNumberCRUDTab">
          <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
               <Entry Placeholder="Batch Number"/>
-              <Button Text="+ Add a new Batch" TextColor="#FFFFFF" BackgroundColor="#EF4130" BorderRadius="20" FontAttributes="Bold" FontSize="Medium"/>
+              <Button Text="+ Add a new Batch" Style="{StaticResource button}"/>
         </StackLayout>
     </ContentPage>
 
     <ContentPage Title="BatchNumberViewTab">
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="BatchNumber View" />
-        </StackLayout>
+        <ScrollView>
+            <CollectionView x:Name="collectionViewBatch">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Style="{StaticResource frame}">
+                            <Frame.Content>
+                                <StackLayout Padding="10,10,10,10" Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="BatchNo." TextColor="Gray" FontSize="Medium" FontAttributes="Bold"/>
+                                        <Label Text="{Binding BatchNo}" HorizontalOptions="EndAndExpand" TextColor="#EF4130" FontSize="Large" FontAttributes="Bold"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame.Content>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
     </ContentPage>
     
 </CarouselPage>
