@@ -10,7 +10,7 @@
     <ContentPage Title="BatchNumberCRUDTab">
          <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <Entry x:Name="entryBatch" Placeholder="Batch Number"/>
-            <Button x:Name="buttonAddBatch" Text="+ Add a new Batch" Style="{StaticResource button}"/>
+            <Button x:Name="buttonAddBatch" Text="+ Add a new Batch" Style="{StaticResource button}" Clicked="ButtonAddBatch_Clicked"/>
         </StackLayout>
     </ContentPage>
 
@@ -24,7 +24,7 @@
                                 <StackLayout Padding="10,10,10,10" Orientation="Horizontal">
                                     <StackLayout Orientation="Vertical">
                                         <Label Text="BatchNo." TextColor="Gray" FontSize="Medium" FontAttributes="Bold"/>
-                                        <Label Text="{Binding BatchNo}" HorizontalOptions="EndAndExpand" TextColor="#EF4130" FontSize="Large" FontAttributes="Bold"/>
+                                        <Label Text="{Binding BatchNo}" HorizontalOptions="Start" TextColor="#EF4130" FontSize="Large" FontAttributes="Bold"/>
                                     </StackLayout>
                                 </StackLayout>
                             </Frame.Content>

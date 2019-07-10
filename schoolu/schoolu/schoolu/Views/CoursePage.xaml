@@ -9,14 +9,58 @@
     
     <ContentPage Title="CoursePageCRUDTab">
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="CoursePage CRUD" />
+            <Entry x:Name="entryCourseCode" Placeholder="Course code" />
+            <Entry x:Name="entryCourseTitle" Placeholder="Course title" />
+            <!--<Grid HorizontalOptions="Center" VerticalOptions="Center"> 
+                <Label Grid.Row="0" Grid.Column="0" Text="Credit Hours"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Source={x:Reference stepperCreditHours}, Path=Value}" TextColor="#EF4130" HorizontalOptions="Center" />
+            </Grid>-->
+            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" VerticalOptions="Center">
+                <Label Text="{Binding Source={x:Reference stepperCreditHours}, Path=Value, StringFormat='Credit Hours      {0}'}" FontSize="Medium" />
+                <Stepper x:Name="stepperCreditHours" Minimum="2" Maximum="6" Value="4" />
+            </StackLayout>
+            <!--<Picker x:Name="pickerCourseType" Title="Select your course type">
+                <Picker.Items>
+                    <x:String>Compussory</x:String>
+                    <x:String>Elective</x:String>
+                    <x:String>Supportive Compussory</x:String>
+                    <x:String>Supportive Elective</x:String>
+                </Picker.Items>
+            </Picker>-->
+            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" VerticalOptions="Center">
+                <Button x:Name="buttonAddCourse" Text="+ Add a new course" Style="{StaticResource button}" Clicked="ButtonAddCourse_Clicked"/>
+                <Button x:Name="buttonRetrieveCourse" Text="Retrieve a course" Style="{StaticResource button}" Clicked="ButtonRetrieveCourse_Clicked"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" VerticalOptions="Center">
+                <Button x:Name="buttonUpdateCourse" Text="Update course" Style="{StaticResource button}" Clicked="ButtonUpdateCourse_Clicked"/>
+                <Button x:Name="buttonDeleteCourse" Text="Remove course" Style="{StaticResource button}" Clicked="ButtonDeleteCourse_Clicked"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage>
 
     <ContentPage Title="CoursePageViewTab">
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="CoursePage View" />
-        </StackLayout>
+        <ScrollView>
+            <CollectionView x:Name="CollectionViewCourse">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                            <Frame Style="{StaticResource frame}">
+                                <Frame.Content>
+                                    <StackLayout Padding="10,10,10,10" Orientation="Horizontal">
+                                        <StackLayout Orientation="Vertical">
+                                            <Label Text="Course Code" TextColor="Gray" FontSize="Medium" FontAttributes="Bold"/>
+                                            <Label Text="{Binding CoruseCode}" HorizontalOptions="Start" TextColor="#EF4130" FontSize="Large" FontAttributes="Bold"/>
+                                            <Label Text="Course Title" TextColor="Gray" FontSize="Medium" FontAttributes="Bold"/>
+                                            <Label Text="{Binding CourseTitle}" HorizontalOptions="Start" TextColor="#EF4130" FontSize="Large" FontAttributes="Bold"/>
+                                            <Label Text="Credit Hours" TextColor="Gray" FontSize="Medium" FontAttributes="Bold"/>
+                                            <Label Text="{Binding CreditHours}" HorizontalOptions="Start" TextColor="#EF4130" FontSize="Large" FontAttributes="Bold"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame.Content>
+                            </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
     </ContentPage>
     
 </CarouselPage>

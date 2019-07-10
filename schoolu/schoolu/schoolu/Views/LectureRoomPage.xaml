@@ -9,15 +9,30 @@
 
     <ContentPage Title="LectureRoomPageCRUDTab">
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Entry Placeholder="LectureRoom"/>
-            <Button Text="+ Add a new LectureRoom" TextColor="#FFFFFF" BackgroundColor="#EF4130" BorderRadius="20" FontAttributes="Bold" FontSize="Medium"/>
+            <Entry x:Name="entryLectureRoom" Placeholder="LectureRoom"/>
+            <Button x:Name="buttonAddLectureRoom" Text="+ Add a new LectureRoom" Style="{StaticResource button}" Clicked="ButtonAddLectureRoom_Clicked" />
         </StackLayout>
     </ContentPage>
 
     <ContentPage Title="LectureRoomPageViewTab">
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="LectureRoomPage View" />
-        </StackLayout>
+        <ScrollView>
+            <CollectionView x:Name="collectionLectureRoom">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Style="{StaticResource frame}">
+                            <Frame.Content>
+                                <StackLayout Padding="10,10,10,10" Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="LectureRoom" TextColor="Gray" FontSize="Medium" FontAttributes="Bold"/>
+                                        <Label Text="{Binding LR}" HorizontalOptions="Start" TextColor="#EF4130" FontSize="Large" FontAttributes="Bold"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame.Content>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
     </ContentPage>
 
 </CarouselPage>

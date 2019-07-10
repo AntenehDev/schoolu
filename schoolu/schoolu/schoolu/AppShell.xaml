@@ -34,12 +34,12 @@
         <Tab Title="Schedule" Icon="schedule.png">
             <ShellContent ContentTemplate="{DataTemplate local:SchedulePage}" />
         </Tab>
-        <Tab Title="Section" Icon="section.png">
+        <!--<Tab Title="Section" Icon="section.png">
             <ShellContent ContentTemplate="{DataTemplate local:SectionPage}" />
-        </Tab>
-        <Tab Title="Fee" Icon="fee.png">
+        </Tab>-->
+        <!--<Tab Title="Fee" Icon="fee.png">
             <ShellContent ContentTemplate="{DataTemplate local:FeePage}" />
-        </Tab>
+        </Tab>-->
         <Tab Title="LectureRoom" Icon="lectureroom.png">
             <ShellContent ContentTemplate="{DataTemplate local:LectureRoomPage}" />
         </Tab>

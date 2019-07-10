@@ -18,6 +18,7 @@ namespace schoolu.Views
         {
             InitializeComponent();
         }
+
         protected async override void OnAppearing()
         {
             base.OnAppearing();
